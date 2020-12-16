@@ -9,10 +9,10 @@ SET release_folder=releases\%new_version%
 IF NOT EXIST %release_folder% (
 	MKDIR %release_folder%
 
-    CD src\controller
+    CD src
     CALL compile.bat || GOTO :error
     CD %home_dir%
-    COPY .\src\controller\main.ihx %release_folder%\TSDZ2-v%new_version%.hex
+    COPY .\src\main.ihx %release_folder%\TSDZ2-v%new_version%.hex
 
     CD src\display\KT-LCD3
     CALL compile.bat || GOTO :error
